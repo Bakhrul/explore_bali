@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css"
+        integrity="sha512-xnP2tOaCJnzp2d2IqKFcxuOiVCbuessxM6wuiolT9eeEJCyy0Vhcwa4zQvdrZNVqlqaxXhHqsSV1Ww7T2jSCUQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#"><span class="c-primary">Explore</span> Bali<span
+                    class="c-primary">.</span></a>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-search-nav me-2" type="button" id="searchNotcollapseNav"
+                    onclick="showSearch()"><i class="bi bi-search"></i></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <div class="collapse justify-content-end navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav my-auto navigation-custom-group">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Destinations<span
+                                class="c-primary">.</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">Accommodation<span class="c-primary">.</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">Transport<span class="c-primary">.</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0);">History<span class="c-primary">.</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-search-nav" type="button" id="searchcollapseNav"
+                            onclick="showSearch()"><i class="bi bi-search"></i></button>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <div class="dropdown dropdown-profile">
+                        <a class="dropdown-toggle" href="#" role="button">Hello Aldi<span class="c-primary">!</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <a class="accordion-button collapsed" href="">
+                                            <i class="bi bi-person-circle me-2"></i> Profil
+                                        </a>
+                                    </h2>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                            aria-expanded="false" aria-controls="flush-collapseThree">
+                                            <i class="bi bi-clipboard-data me-2"></i> Pesanan Saya
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <ul class="sublist-profile-menu">
+                                                <li><a href="javascript:void(0)">Daftar Transaksi</a></li>
+                                                <li><a href="javascript:void(0)">Daftar Sudah Bayar & Titip</a></li>
+                                                <li><a href="javascript:void(0)">Daftar Pembayaran & Tagihan</a></li>
+                                                <li><a href="javascript:void(0)">Alamat Pengiriman</a></li>
+                                                <li><a href="javascript:void(0)">Testimoni</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <a class="accordion-button collapsed" href="javascript:void(0);">
+                                            <i class="bi bi-box-arrow-right me-2"></i> Keluar
+                                        </a>
+                                    </h2>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- <button class="btn btn-login" type="button">Login</button>
+                    <button class="btn btn-register me-2" type="button">Sign Up</button> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="search-nav-group d-none" id="searchNavAction">
+        <input type="text" class="form-control" placeholder="Cari berdasarkan kata kunci...">
+        <button type="button" onclick="hideSearch()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <section class="header-wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-9 col-lg-10 col-md-12">
+                    <img src="assets/image/bg-header.jpg" class="w-100 header-hero">
+                    <div class="floating-group-header-box">
+                        <div class="row floating-group-header-row">
+                            <div class="col-xl-4 col-lg-4 col-md-12 floating-group-header-element">
+                                <div class="d-flex align-items-center">
+                                    <div><img src="assets/image/location-icon.png" class="image"></div>
+                                    <div class="title">Location</div>
+                                </div>
+                                <input type="text" class="form-control form-header ms-4 mt-2"
+                                    placeholder="Where do you want to go?">
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-12 floating-group-header-element">
+                                <div class="d-flex align-items-center">
+                                    <div><img src="assets/image/date-icon.png" class="image"></div>
+                                    <div class="title">Date</div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <input type="text" class="form-control form-header ms-4 mt-2" id="datepicker"
+                                        placeholder="Choose date">
+                                    <i class="bi bi-chevron-down" style="color:#AEAEAE;font-size:12px;"></i>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-3 col-md-12 floating-group-header-element">
+                                <div class="d-flex align-items-center">
+                                    <div><img src="assets/image/location-icon.png" class="image"></div>
+                                    <div class="title">People</div>
+                                </div>
+                                <div class="d-flex align-items-center ms-4 mt-2">
+                                    <button class="btn btn-minus-header" type="button" onclick="decrement()"><i
+                                            class="bi bi-dash-lg"></i></button>
+                                    <input type="text" class="form-control form-header text-center" id="qty_people"
+                                        placeholder="Add people" onkeypress="return isNumberKey(event)">
+                                    <button class="btn btn-plus-header c-primary" type="button" onclick="increment()"><i
+                                            class="bi bi-plus-lg"></i></button>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-2 col-md-12 loating-group-header-element align-items-center">
+                                <button class="btn btn-search-header">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="popular-wrapper pt-2">
+        <div class="container">
+            <div class="d-flex justify-content-center w-100">
+                <h4 class="text-center">Popular Search</h4>
+                <img src="assets/image/buble-popular.png" width="25px" height="25px" class="ms-1"
+                    style="position: relative;top:-5px">
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-9 col-lg-9 col-md-12">
+                    <div class="d-flex flex-wrap popular-search-group justify-content-center">
+                        <a class="popular-search-element" href="javascript:void(0);">Mount Batur</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Beach</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Guungan Hill</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Bali Zoo</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Lovina</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Puri Saren Palace</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Devil’s Tears</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Ubud</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Tirta Empul Temple</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Nusa Dua</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Kuta</a>
+                        <a class="popular-search-element" href="javascript:void(0);">Bali Temple</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-9 col-lg-9 col-md-12">
+                    <div class="categories-box">
+                        <div class="d-flex align-items-center" style="font-size:20px;">
+                            <i class="bi bi-dash-lg me-3"></i>
+                            <span style="font-weight:600;">Category</span>
+                        </div>
+                        <div style="color:#AEAEAE;margin-left:35px;font-size:14px;max-width:300px" class="text-sm pt-2">
+                            You don't have to look for your tour for a long time. We have grouped them by category</div>
+
+                        <div class="slider-category mt-4">
+                            <div class="">
+                                <img src="assets/image/beach-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Beach</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/mountain-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Mountain</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/temple-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Temple</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/culture-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Culture</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/waterfall-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Waterfall</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/beach-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Beach</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/mountain-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Mountain</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/temple-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Temple</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/culture-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Culture</div>
+                            </div>
+                            <div class="">
+                                <img src="assets/image/waterfall-img.png" class="image-category">
+                                <div class="text-center pt-1" style="font-weight: bold;font-size: 14px;">Waterfall</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-9 col-lg-9 col-md-12">
+                    <h2 class="text-center" style="font-weight: 600;">Recommendations For You</h2>
+                    <div class="text-center mb-5" style="color:#AEAEAE;font-size:14px !important;">Much places for your
+                        vibes
+                        from the world</div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                                <div class="recommendations-box">
+                                    <img src="assets//image/lempuyang.png">
+                                    <div class="title">Lempuyang Temple</div>
+                                    <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div style="font-weight: 600;" class="ms-2">Abang, Karangasem</div>
+                                    </div>
+                                    <div class="price">IDR 150K <span
+                                            style="font-size:10px;font-weight:normal !important;">/ person</span></div>
+                                    <div class="booknow">
+                                        Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                                <div class="recommendations-box">
+                                    <img src="assets//image/diamond.png">
+                                    <div class="title">Diamond Beach</div>
+                                    <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div style="font-weight: 600;" class="ms-2">Nusa Penida, Klungkung</div>
+                                    </div>
+                                    <div class="price">IDR 15K <span
+                                            style="font-size:10px;font-weight:normal !important;">/
+                                            person</span></div>
+                                    <div class="booknow">
+                                        Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;"></a>
+                            <div class="recommendations-box">
+                                <img src="assets//image/tegalalang.png">
+                                <div class="title">Tegalalang Rice Terrace</div>
+                                <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                    <div style="font-weight: 600;" class="ms-2">Cekingan, Gianyar</div>
+                                </div>
+                                <div class="price">IDR 5K <span style="font-size:10px;font-weight:normal !important;">/
+                                        person</span></div>
+                                <div class="booknow">
+                                    Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                                <div class="recommendations-box">
+                                    <img src="assets//image/sekumpul.png">
+                                    <div class="title">Sekumpul Waterfall</div>
+                                    <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div style="font-weight: 600;" class="ms-2">Sawan, Buleleng</div>
+                                    </div>
+                                    <div class="price">IDR 30K <span
+                                            style="font-size:10px;font-weight:normal !important;">/
+                                            person</span></div>
+                                    <div class="booknow">
+                                        Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                                <div class="recommendations-box">
+                                    <img src="assets//image/campuhan.png">
+                                    <div class="title">Campuhan Ridge Walk</div>
+                                    <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div style="font-weight: 600;" class="ms-2">Ubud, Gianyar</div>
+                                    </div>
+                                    <div class="price">Free Enterace </div>
+                                    <div class="booknow">
+                                        Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                                <div class="recommendations-box">
+                                    <img src="assets//image/Pinggan.png">
+                                    <div class="title">Pinggan Hill</div>
+                                    <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div style="font-weight: 600;" class="ms-2">Kintamani, Bangli</div>
+                                    </div>
+                                    <div class="price">IDR 100K <span
+                                            style="font-size:10px;font-weight:normal !important;">/ person</span></div>
+                                    <div class="booknow">
+                                        Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                                <div class="recommendations-box">
+                                    <img src="assets//image/melasti.jpg">
+                                    <div class="title">Melasti Beach</div>
+                                    <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div style="font-weight: 600;" class="ms-2">Ungasan, Badung</div>
+                                    </div>
+                                    <div class="price">IDR 10K <span
+                                            style="font-size:10px;font-weight:normal !important;">/
+                                            person</span></div>
+                                    <div class="booknow">
+                                        Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mb-5">
+                            <a href="javascript:void(0);" style="text-decoration: none !important;">
+                                <div class="recommendations-box">
+                                    <img src="assets//image/batur.png">
+                                    <div class="title">Mount Batur</div>
+                                    <div class=" d-flex c-primary text-sm" style="font-size:12px !important">
+                                        <i class="bi bi-geo-alt-fill"></i>
+                                        <div style="font-weight: 600;" class="ms-2">Kintamani, Bangli</div>
+                                    </div>
+                                    <div class="price">IDR 75K <span
+                                            style="font-size:10px;font-weight:normal !important;">/
+                                            person</span></div>
+                                    <div class="booknow">
+                                        Book Now <i class="bi bi-arrow-right ms-2"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a class="link-view-more" href="javascript:void(0);">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker();
+            $('.dropdown').hover(function () {
+                $('ul.dropdown-menu', this).stop(true, true).slideDown(300);
+                $(this).addClass('open');
+            }, function () {
+                $('ul.dropdown-menu', this).stop(true, true).slideUp(300);
+                $(this).removeClass('open');
+            });
+
+            $(".slider-category").slick({
+                slidesToShow: 5,
+                slidesToScroll: 3,
+                autoplaySpeed: 2e3,
+                prevArrow: '<button class=" slick-prev-categories" aria-label="Previous" type="button"><i class="bi bi-arrow-left"></i></button>',
+                nextArrow: '<button class=" slick-next-categories" aria-label="Next" type="button"><i class="bi bi-arrow-right"></i></button>',
+                responsive: [{
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    }, {
+                        breakpoint: 567,
+                        settings: {
+                            slidesToShow: 2
+                        },
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+        function increment() {
+            let qty = $('#qty_people').val() ? parseInt($('#qty_people').val()) : 0;
+            $('#qty_people').val(qty + 1);
+            if (qty + 1 > 1) {
+                $('.btn-minus-header').addClass('c-primary');
+            } else {
+                $('.btn-minus-header').removeClass('c-primary');
+            }
+        }
+
+        function decrement() {
+            let qty = $('#qty_people').val() ? parseInt($('#qty_people').val()) : 0;
+            if (qty == 0) {
+                return false;
+            }
+            if (qty > 1) {
+                $('#qty_people').val(qty - 1);
+                $('.btn-minus-header').addClass('c-primary');
+            } else {
+                $('.btn-minus-header').removeClass('c-primary');
+            }
+        }
+
+        function showSearch() {
+            $("#searchNavAction").removeClass('d-none');
+
+            $('#searchNavAction').addClass('d-flex');
+
+        }
+
+        function hideSearch() {
+            $("#searchNavAction").removeClass('d-flex');
+
+            $('#searchNavAction').addClass('d-none');
+
+        }
+    </script>
+</body>
+
+</html>
